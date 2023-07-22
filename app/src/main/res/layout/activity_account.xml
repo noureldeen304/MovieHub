@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AccountActivity">
+
+        <ScrollView
+            android:id="@+id/scrollView_account"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tv_account_top_rated"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/top_rated"
+                            android:textColor="@color/black"
+                            android:textSize="40sp"
+                            android:textStyle="bold" />
+
+                        <ViewSwitcher
+                            android:id="@+id/switcher_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                        <!-- child 0 - loading state -->
+                        <ProgressBar
+                            android:id="@+id/loader_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/recTopRated"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                        </ViewSwitcher>
+
+
+
+                        <TextView
+                            android:id="@+id/tv_account_popular"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/popular"
+                            android:textColor="@color/black"
+                            android:textSize="40sp"
+                            android:textStyle="bold" />
+
+                        <ViewSwitcher
+                            android:id="@+id/switcher_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                                <ProgressBar
+                                    android:id="@+id/loader_2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" />
+
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/recPopular"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                        </ViewSwitcher>
+
+                        <TextView
+                            android:id="@+id/tv_account_upcoming"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="@string/up_coming"
+                            android:textColor="@color/black"
+                            android:textSize="40sp"
+                            android:textStyle="bold" />
+
+                        <ViewSwitcher
+                            android:id="@+id/switcher_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                                <ProgressBar
+                                    android:id="@+id/loader_3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/recUpcoming"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="10dp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                        </ViewSwitcher>
+
+
+
+                </LinearLayout>
+
+        </ScrollView>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigationView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fcfcfc"
+            app:headerLayout="@layout/nav_header"
+            app:menu="@menu/nav_menu"
+            android:layout_gravity="start"
+            >
+        </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
+
